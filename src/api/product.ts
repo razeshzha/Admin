@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import api from "@/axios/api.axios";
@@ -44,15 +45,18 @@ export const getProductById = async(id:string) =>{
     }
 }
 
-export const createProduct = async(data:IProductInput) =>{
-    try{
-        const response = await api.post(`/product`,data)
-        return response?.data
-
-    }catch(error:any){
-        throw error?.response?.data; 
+export const createProduct = async (data: FormData) => {
+    try {
+      const response = await api.post('/product', data, {
+        headers: {
+        },
+      });
+      return response?.data;
+    } catch (error: any) {
+      throw error?.response?.data;
     }
-}
+  };
+  
 
 export const deleteProduct = async(id:string) =>{
     try{

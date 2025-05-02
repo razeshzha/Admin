@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 'use client'
 import React from 'react';
 import { useForm, FormProvider,SubmitHandler } from 'react-hook-form';
@@ -10,6 +11,7 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { toast } from 'react-hot-toast';
 import FileUpload from '../ui/file-upload'
 import CategorySelect from '../ui/category-select'
+
 const ProductForm = () => {
   const methods = useForm({
     resolver: yupResolver(productInputSchema),
