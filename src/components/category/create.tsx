@@ -1,14 +1,15 @@
+// src/app/category/create/page.tsx
 
-import React from 'react'
-import CategoryForm from '@/components/forms/category.form'
+import CategoryForm from '@/src/components/forms/category.form';
+import PageHeading from '@/src/components/ui/page-heading';
 
-const CreateCategory = () =>{
-    return (
-        <div>
-            <CategoryForm/>
-        </div>
-    )
-}
+const CreateCategoryPage = () => {
+  return (
+    <div className="p-6">
+      <PageHeading title="Create New Category" />
+      <CategoryForm />
+    </div>
+  );
+};
 
-
-export default CreateCategory
+export default CreateCategoryPage;

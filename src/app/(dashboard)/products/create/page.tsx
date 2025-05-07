@@ -1,5 +1,5 @@
-import PageHeading from "@/components/ui/page-heading"
-import CreateProduct from '@/components/product/create'
+import PageHeading from "@/src/components/ui/page-heading"
+import CreateProduct from '@/src/components/product/create'
 
 const Page = () =>{
     return (

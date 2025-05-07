@@ -18,7 +18,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className='h-full w-[250px] py-4 border-r border-gray-300'>
+    <div className='h-full w-[250px] py-4 border-r border-gray-300 bg-blue-700'>
       <div className='px-4 mb-6'>
         <h2 className='text-2xl font-bold tracking-wider'>Admin</h2>
       </div>

@@ -7,7 +7,7 @@ import {
   } from '@tanstack/react-table'
 
 import {useQuery,useMutation,useQueryClient} from '@tanstack/react-query'
-import {getAllProducts,deleteProduct} from '@/api/product'
+import {getAllProducts,deleteProduct} from '@/src/api/product'
 import { Actions } from "../ui/table-actions"
 import toast from "react-hot-toast"
 

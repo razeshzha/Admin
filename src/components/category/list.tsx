@@ -7,7 +7,7 @@ import {
   } from '@tanstack/react-table'
 
 import {useQuery,useMutation,useQueryClient} from '@tanstack/react-query'
-import {getAllCategory,deleteCategory} from '@/api/category'
+import {getAllCategory,deleteCategory} from '@/src/api/category'
 import { Actions } from "../ui/table-actions"
 import toast from "react-hot-toast"
 
@@ -63,7 +63,7 @@ const columns = [
     cell: info => info.getValue(),
     header: () => <span>Category Name</span>,
     footer: info => info.column.id,
-  }),
+  }), 
   columnHelper.accessor(row => row.description, {
     id: 'description',
     cell: info => <i>{info.getValue() ?? '-'}</i>,

@@ -3,16 +3,16 @@
 
 import { useForm, SubmitHandler } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
-import { loginSchema } from "@/schemas/login.schema"
+import { loginSchema } from "@/src/schemas/login.schema"
 import { LuAsterisk } from "react-icons/lu";
 import toast from 'react-hot-toast';
-import { ILogin } from "@/interface/auth/auth.interface"
+import { ILogin } from "@/src/interface/auth/auth.interface"
 import { useMutation} from '@tanstack/react-query'
-import { login } from "@/api/auth"
+import { login } from "@/src/api/auth"
 import { useRouter } from "next/navigation";
 import Cookies from 'js-cookie'
 
-import {useAuth} from '@/context/auth.context'
+import {useAuth} from '@/src/context/auth.context'
 
 const LoginForm = () => {
     const router = useRouter()

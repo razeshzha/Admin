@@ -1,10 +1,10 @@
 'use client'
 
 import { useEffect } from 'react';
-import { useAuth } from '@/context/auth.context';
+import { useAuth } from '@/src/context/auth.context';
 import { useRouter } from 'next/navigation';
-import SideBar from '@/components/layout/sidebar';
-import Header from '@/components/ui/header';
+import SideBar from '@/src/components/layout/sidebar';
+import Header from '@/src/components/ui/header';
 
 interface IProps {
     children: React.ReactNode;
@@ -14,7 +14,6 @@ const Layout: React.FC<IProps> = ({ children }) => {
     const { isAuthenticated } = useAuth();
     const router = useRouter();
 
-    // Run the redirect on the client-side only
     useEffect(() => {
         if (!isAuthenticated) {
             router.replace('/login');
@@ -22,14 +21,18 @@ const Layout: React.FC<IProps> = ({ children }) => {
     }, [isAuthenticated, router]);
 
     return (
-        <div className='flex h-full w-full'>
-            <div className='h-full w-[250px] border-r border-gray-400'>
-                {/* <Header /> */}
+        <div className="flex h-screen w-screen overflow-y-clip">
+            {/* Sidebar */}
+            <div className=" w-[250px] border-r border-gray-300 bg-white">
                 <SideBar />
             </div>
-            <div className='mb-10 w-full flex flex-col flex-1'>
-                <Header/>
-                <div className='flex-1'>
+
+            {/* Main Content */}
+            <div className="flex  overflow-auto flex-col flex-1 h-full">
+                <Header />
+
+                {/* Scrollable Content */}
+                <div className="flex-1 overflow-y-auto p-4 bg-gray-50">
                     {children}
                 </div>
             </div>

@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import api from "@/axios/api.axios";
-import { ICategoryInput } from '@/interface/category.interface';
-
+import api from "@/src/axios/api.axios";
+import { ICategoryInput } from '@/src/interface/category.interface';
 
 export const getAllCategory = async() =>{
     try{

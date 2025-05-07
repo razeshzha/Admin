@@ -1,5 +1,5 @@
-import PageHeading from "@/components/ui/page-heading"
-import CreateCategory from '@/components/category/create'
+import PageHeading from "@/src/components/ui/page-heading"
+import CreateCategory from '@/src/components/category/create'
 
 const Page = () =>{
     return (

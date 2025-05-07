@@ -4,7 +4,7 @@ import React from 'react';
 import SelectInput from './select-input';
 import { useController, useFormContext } from 'react-hook-form';
 import { useQuery } from '@tanstack/react-query';
-import { getAllCategory } from '@/api/category';
+import { getAllCategory } from '@/src/api/category';
 
 interface Option {
   label: string;

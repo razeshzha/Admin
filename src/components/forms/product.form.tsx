@@ -4,9 +4,9 @@ import React from 'react';
 import { useForm, FormProvider,SubmitHandler } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import Input from '../ui/input';
-import { IProductInput } from '@/interface/product.interface';
-import productInputSchema from '@/schemas/product.schema';
-import { createProduct } from '@/api/product';
+import { IProductInput } from '@/src/interface/product.interface';
+import productInputSchema from '@/src/schemas/product.schema';
+import { createProduct } from '@/src/api/product';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { toast } from 'react-hot-toast';
 import FileUpload from '../ui/file-upload'
@@ -41,7 +41,10 @@ const ProductForm = () => {
   const onSubmit:SubmitHandler<IProductInput> = (data) => {
     const formData = new FormData();
   formData.append('name', data.name);
-  formData.append('description', data.description || '');
+  if(data.description){
+
+    formData.append('description', data?.description);
+  }
   formData.append('category', data.category);
   formData.append('price', data.price.toString());
 

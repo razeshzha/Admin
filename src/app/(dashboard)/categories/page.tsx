@@ -1,5 +1,5 @@
-import { CategoryList } from "@/components/category/list"
-import PageHeading from "@/components/ui/page-heading"
+import { CategoryList } from "@/src/components/category/list"
+import PageHeading from "@/src/components/ui/page-heading"
 
 
 const Page = () =>{

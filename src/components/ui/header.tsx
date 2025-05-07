@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { Button } from "@/components/ui/button";
-import { useAuth } from '@/context/auth.context';
+import { Button } from "@/src/components/ui/button";
+import { useAuth } from '@/src/context/auth.context';
 import Cookies from 'js-cookie';
 
 export default function Header() {
@@ -69,13 +69,13 @@ export default function Header() {
           {showProfile && (
             <div className="mt-2 p-4 bg-white rounded shadow w-64 text-sm border">
               <div className="mb-2">
-                <strong>Name:</strong> {user?.name || 'Loading...'}
+                <strong>Name:</strong> {user?.firstName || 'Loading...'}
               </div>
               <div className="mb-2">
                 <strong>Email:</strong> {user?.email || 'Loading...'}
               </div>
               <div className="mb-2">
-                <strong>Contact:</strong> {user?.phone || 'Loading...'}
+                <strong>Contact:</strong> {user?. phoneNumber || 'Loading...'}
               </div>
               {/* Logout button */}
               <Button variant="outline" onClick={handleLogout} className="mt-2 w-full">

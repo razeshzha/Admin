@@ -3,9 +3,9 @@ import React from 'react';
 import { useForm, FormProvider } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import Input from '../ui/input';
-import { ICategoryInput } from '@/interface/category.interface';
-import categoryInputSchema from '@/schemas/category.schema';
-import {createCategory} from '@/api/category'
+import { ICategoryInput } from '@/src/interface/category.interface';
+import categoryInputSchema from '@/src/schemas/category.schema';
+import {createCategory} from '@/src/api/category'
 import {useMutation,useQueryClient} from '@tanstack/react-query'
 import {toast} from 'react-hot-toast'
  
