@@ -26,7 +26,7 @@ export const getOrderById = async (id: string) => {
 // Create a new order
 export const createOrder = async (data: any) => {
     try {
-        const response = await api.post('/order', data);
+        const response = await api.post('/order/place', data);
         return response?.data;
     } catch (error: any) {
         console.error("Error creating order:", error);
