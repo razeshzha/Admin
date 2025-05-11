@@ -7,7 +7,7 @@ const getToken = () => {
 
 const api = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_BASE_URL,  // Make sure the base URL is correct
-  // timeout: 3000,  // If you need a timeout, you can enable it
+  timeout: 10000,  // If you need a timeout, you can enable it
 });
 
 // Add a request interceptor

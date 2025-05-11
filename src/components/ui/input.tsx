@@ -10,6 +10,7 @@ type InputProps = {
   required?: boolean;
   defaultValue?: string;
   multiline?: boolean;
+  error?: string;  // Add error prop here
 };
 
 const Input = ({
@@ -19,11 +20,11 @@ const Input = ({
   placeholder = '',
   multiline = false,
   defaultValue = '',
+  error,  // Accept error prop
 }: InputProps) => {
   const {
     control,
-    formState: { errors },
-  } = useFormContext(); // Use this to access form state from parent form
+  } = useFormContext();
 
   return (
     <div className="mb-4 tracking-wider">
@@ -40,8 +41,8 @@ const Input = ({
               {...field}
               placeholder={placeholder}
               id={name}
-              rows={4} // You can adjust rows or use a dynamic height depending on the content
-              className={`mt-1 block w-full px-3 py-3 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm ${errors[name] ? 'border-red-500' : 'border-gray-300'}`}
+              rows={4}
+              className={`mt-1 block w-full px-3 py-3 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm ${error ? 'border-red-500' : 'border-gray-300'}`}
             />
           ) : (
             <input
@@ -49,13 +50,13 @@ const Input = ({
               type={type}
               placeholder={placeholder}
               id={name}
-              className={`mt-1 block w-full px-3 py-3 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm ${errors[name] ? 'border-red-500 focus-none' : 'border-gray-300'}`}
+              className={`mt-1 block w-full px-3 py-3 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm ${error ? 'border-red-500 focus-none' : 'border-gray-300'}`}
             />
           )
         }
       />
-      {errors[name] && (
-        <p className="text-red-500 text-xs mt-1">{errors[name as string]?.message as string}</p>
+      {error && (
+        <p className="text-red-500 text-xs mt-1">{error}</p>  // Display error if present
       )}
     </div>
   );
